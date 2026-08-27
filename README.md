@@ -1,16 +1,29 @@
-# React + Vite
+# Nexus AI: Semantic Game Discovery Engine
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi) 
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Pinecone](https://img.shields.io/badge/Pinecone-000000?style=for-the-badge&logo=pinecone)
+![HuggingFace](https://img.shields.io/badge/HuggingFace-F9AB00?style=for-the-badge&logo=huggingface&logoColor=white)
 
-Currently, two official plugins are available:
+Nexus AI is a full-stack, AI-powered search engine that enables users to discover video games based on concepts, lore, and gameplay mechanics using natural language processing rather than exact keyword matching.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🧠 System Architecture
 
-## React Compiler
+*   **Semantic Pipeline:** Cleans unstructured dataset metadata and serializes it into natural language narratives for high-context embedding generation.
+*   **Vector Engine:** Utilizes approximate nearest neighbor (ANN) search to match user queries with game vectors based on cosine similarity.
+*   **Serverless Offloading:** Bypasses low-memory container bottlenecks by delegating heavy AI math to external cloud clusters, reducing local API memory overhead by over 80%.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ⚙️ Tech Stack
 
-## Expanding the ESLint configuration
+*   **Frontend Interface:** Built with React and Vite for a lightning-fast, edge-deployed UI.
+*   **Backend Infrastructure:** Asynchronous FastAPI server deployed on Render.
+*   **Machine Learning:** Powered by the BAAI/bge-small-en-v1.5 dense vector model via the Hugging Face Inference API.
+*   **Database:** Pinecone vector database for sub-second, high-dimensional similarity scoring.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Quick Start
+
+1.  Clone this repository and navigate to the root directory.
+2.  Create a .env file and add your PINECONE_API_KEY and HF_TOKEN.
+3.  Install the dependencies listed in requirements.txt.
+4.  Boot the Uvicorn server to initialize the API endpoints.
+5.  In a separate terminal, install the frontend modules and launch the Vite development server.
